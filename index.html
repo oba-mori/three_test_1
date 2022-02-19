@@ -10,6 +10,11 @@ https://www.kabuku.co.jp/developers/threearjs
 途中
 今のところURLのリンクだけは表示されるが、それ以外は真っ白
 
+THREE.ARUtils.getARDisplay().then(function (display)   
+が実行されない
+
+
+
 -->
 
 <!DOCTYPE html>
@@ -94,8 +99,15 @@ https://www.kabuku.co.jp/developers/threearjs
 
         <!-- three.ar.jsのCDN -->
         <script src="https://cdn.jsdelivr.net/npm/three.ar.js@latest/dist/three.ar.js"></script>
-        <!-- or  three.ar.jsのCDN の minified バージョン -->
+        <!-- or  three.ar.jsのCDN  minified バージョン -->
         <script src="https://cdn.jsdelivr.net/npm/three.ar.js@latest/dist/three.ar.min.js"></script>
+
+
+        <!-- 動かないから追加した -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r127/three.js"></script>
+        <script src="https://cdn.rawgit.com/mrdoob/three.js/r127/examples/js/loaders/GLTFLoader.js"></script>
+        <script src="https://raw.githack.com/AR-js-org/AR.js/3.3.2/three.js/build/ar.js"></script>
+
 
 
         <!-- JavaScript -->
@@ -123,7 +135,7 @@ https://www.kabuku.co.jp/developers/threearjs
 
                     if (display)    //ARディスプレイが取得できた場合 → ARアプリを実行可能だと判断
                     {   
-                    alert('true');
+                        alert('true');
                         vrFrameData = new VRFrameData();    //各オブジェクト準備(VRFrameDataは後ほど端末の位置や向きを取得する際に使用)
                         vrDisplay = display;                //各オブジェクト準備
 

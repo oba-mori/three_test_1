@@ -127,8 +127,6 @@ THREE.ARUtils.getARDisplay().then(function (display)
 
             //動作確認
             alert('正常に動作してるか'); 
-            alert('正常に動作してる'); 
-
 
             /*
             //↓のgetARDisplay()自体が動作しない
@@ -143,8 +141,7 @@ THREE.ARUtils.getARDisplay().then(function (display)
             {
 
                 if (1)    //ARディスプレイが取得できた場合 → ARアプリを実行可能だと判断
-                {   
-                    alert('true');
+                { 
                     vrFrameData = new VRFrameData();    //各オブジェクト準備(VRFrameDataは後ほど端末の位置や向きを取得する際に使用)
                     vrDisplay = display;                //各オブジェクト準備
 
@@ -153,7 +150,6 @@ THREE.ARUtils.getARDisplay().then(function (display)
                 }
                 else          //ARディスプレイが取得無かった場合(ARCode/ARKit非対応のブラウザで開いた場合)
                 {
-                    alert('false');
                     THREE.ARUtils.displayUnsupportedMessage();      //画面に警告を表示して終了
                 }
             });

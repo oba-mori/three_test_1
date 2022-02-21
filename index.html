@@ -81,12 +81,12 @@ THREE.ARUtils.getARDisplay().then(function (display)
        
 
         <div id="info">
-            <span class="title">テンプレテキスト scene</span><br/>
+            <span class="title">テンプレテキスト/span><br/>
             <span class="links">
             
             <!-- リンクのhtmlタグ "リンク先のURL">アンカーテキスト(左で書いたリンク先のURLがページ上で表示されるとき、このアンカーテキストが代わりに表示される) -->
             <a href="https://github.com/google-ar/three.ar.js">three.ar.jsのサイト</a> -
-            <a href="https://developers.google.com/ar/develop/web/getting-started#examples">例</a>
+            <!-- <a href="https://developers.google.com/ar/develop/web/getting-started#examples">例</a> -->
             </span>
         </div>
 
@@ -137,7 +137,7 @@ THREE.ARUtils.getARDisplay().then(function (display)
             THREE.ARUtils.getARDisplay().then(function (display)    //端末判定と表示可否の判定がされ、VRDisplayが呼び出される
             {
 
-                if (display)    //ARディスプレイが取得できた場合 → ARアプリを実行可能だと判断
+                if (1)    //ARディスプレイが取得できた場合 → ARアプリを実行可能だと判断
                 {   
                     alert('true');
                     vrFrameData = new VRFrameData();    //各オブジェクト準備(VRFrameDataは後ほど端末の位置や向きを取得する際に使用)

@@ -140,7 +140,7 @@ THREE.ARUtils.getARDisplay().then(function (display)
             THREE.ARUtils.getARDisplay().then(function (display)    //端末判定と表示可否の判定がされ、VRDisplayが呼び出される
             {
 
-                if (1)    //ARディスプレイが取得できた場合 → ARアプリを実行可能だと判断
+                if (display)    //ARディスプレイが取得できた場合 → ARアプリを実行可能だと判断
                 { 
                     vrFrameData = new VRFrameData();    //各オブジェクト準備(VRFrameDataは後ほど端末の位置や向きを取得する際に使用)
                     vrDisplay = display;                //各オブジェクト準備

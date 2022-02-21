@@ -26,88 +26,54 @@ THREE.ARUtils.getARDisplay().then(function (display)
         
         <!-- CSS -->
         <style>
+            /* body {
+                font-family: monospace;
+                margin: 0;
+                overflow: hidden;
+                position: fixed;
+                width: 100%;
+                height: 100vh;
+                -webkit-user-select: none;
+                user-select: none;
+            }
+
+            #info {
+                position: absolute;
+                left: 50%;
+                bottom: 0;
+                transform: translate(-50%, 0);
+                margin: 1em;
+                z-index: 10;
+                display: block;
+                line-height: 2em;
+                text-align: center;
+            }
+
+            #info * {
+                color: #fff;
+            }
+
+            .title {
+                background-color: rgba(40, 40, 40, 0.4);
+                padding: 0.4em 0.6em;
+                border-radius: 0.1em;
+            }
+
+            .links {
+                background-color: rgba(40, 40, 40, 0.6);
+                padding: 0.4em 0.6em;
+                border-radius: 0.1em;
+            }
+
+            canvas {
+                position: absolute;
+                top: 0;
+                left: 0;
+            }
+ */
 
         </style>
-
-
-        <!-- three.jsのファイルを読み込む(CDNで提供されているURLを使用して導入) 、three.jsはJSのライブラリ-->
-        <!-- <script src="https://unpkg.com/three@0.137.4/build/three.min.js"></script> -->
-    
-        <script>
-          window.addEventListener('DOMContentLoaded', init);
-          
-          //この関数init()の中にThree.jsのコードを書く。
-          //initは関数名なのでなんでもいい(上と関数名は合わせる)
-          function init() {
-    
-    
-            //下記で作成するレンダラーのサイズを指定
-            //幅969px、高さ540px
-            const width = 960;
-            const height = 540;
-    
-    
-            const renderer = new THREE.WebGLRenderer({
-              canvas: document.querySelector('#myCanvas')
-            });
-            renderer.setPixelRatio(window.devicePixelRatio);
-            //レンダラーのサイズをsetSize関数で設定(幅、高さは上記で設定している)
-            renderer.setSize(width, height);
-    
-            //シーン(3Dオブジェクトや光源等を置く3D空間)を作成
-            const scene = new THREE.Scene();
-    
-    
-    
-            //                                        (画角, アスペクト比)　上記でレンダラーのサイズを設定した値をそのまま使用している
-            const camera = new THREE.PerspectiveCamera(45, width / height);
-            camera.position.set(0, 0, +1000);
-    
-    
-      
-            //                                    (幅, 高さ, 奥行き)
-            const geometry = new THREE.BoxGeometry(400, 400, 400);
-    
-            /*テリアルは色や質感の情報を持っている。
-            今回はとりあえず箱を表示させたいので、THREE.MeshNormalMaterialという適当なカラーを割り振るマテリアルを生成する。*/
-            const material = new THREE.MeshNormalMaterial();
-    
-            //                        (ジオメトリ,マテリアル)
-            const box = new THREE.Mesh(geometry, material);
-    
-            //シーンに追加
-            scene.add(box);
-    
-    
-            //アニメーション
-            /*JavaScriptでアニメーションをさせるには、時間経過で関数を呼び続ける必要がある。
-            そのためには、requestAnimationFrame()というグローバルメソッドを使用する。
-            requestAnimationFrame()は引数として渡された関数を、毎フレーム実行する。*/
-    
-            //初回実行
-            tick();
-    
-            // 毎フレーム時に実行されるループイベントです
-            function tick() {
-    
-              //アニメーション処理
-              /*アニメーションの処理として、立方体が回転するようにしてみる。
-              時間経過で回転するようにrotation.yプロパティの数値を加算する。*/
-              box.rotation.y += 0.01;
-    
-              // レンダリング
-              renderer.render(scene, camera); 
-    
-              //tick関数を毎フレーム実行
-              requestAnimationFrame(tick);
-            }
-          }
-        </script>
-
-
-
     </head>
-
 
 
 
@@ -188,11 +154,6 @@ THREE.ARUtils.getARDisplay().then(function (display)
 
 
         </script>
-
-
- <!-- コンテンツを表示する描画エリア作成(html) -->
- <canvas id="myCanvas"></canvas>
- 
     </body>
 </html>
 

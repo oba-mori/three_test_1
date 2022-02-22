@@ -156,18 +156,18 @@ THREE.ARUtils.getARDisplay().then(function (display)
             THREE.ARUtils.getARDisplay().then(function (display)    //端末判定と表示可否の判定がされ、VRDisplayが呼び出される
             {
 
-            //     if (display)    //ARディスプレイが取得できた場合 → ARアプリを実行可能だと判断
-            //     { 
-            //         vrFrameData = new VRFrameData();    //各オブジェクト準備(VRFrameDataは後ほど端末の位置や向きを取得する際に使用)
-            //         vrDisplay = display;                //各オブジェクト準備
+                if (display)    //ARディスプレイが取得できた場合 → ARアプリを実行可能だと判断
+                { 
+                    vrFrameData = new VRFrameData();    //各オブジェクト準備(VRFrameDataは後ほど端末の位置や向きを取得する際に使用)
+                    vrDisplay = display;                //各オブジェクト準備
 
-            //         init(); //init関数呼び出し(アプリの初期化)
+                    init(); //init関数呼び出し(アプリの初期化)
 
-            //     }
-            //     else          //ARディスプレイが取得無かった場合(ARCode/ARKit非対応のブラウザで開いた場合)
-            //     {
-            //         THREE.ARUtils.displayUnsupportedMessage();      //画面に警告を表示して終了
-            //     }
+                }
+                else          //ARディスプレイが取得無かった場合(ARCode/ARKit非対応のブラウザで開いた場合)
+                {
+                    THREE.ARUtils.displayUnsupportedMessage();      //画面に警告を表示して終了
+                }
             });
 
 

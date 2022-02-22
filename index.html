@@ -150,11 +150,11 @@ THREE.ARUtils.getARDisplay().then(function (display)
 
             //アプリケーション開始
 
-            //THREE.ARUtils.getARDisplayを使用してARアプリに使用できるARディスプレイを準備
+            THREE.ARUtils.getARDisplayを使用してARアプリに使用できるARディスプレイを準備
             /*内部的にはWebVR APIのnavigator.getVRDisplaysを使用してVRディスプレイを取得した後で、
             ディスプレイ名に'tango'または'arkit'が含まれていたらARディスプレイとみなす*/
-            // THREE.ARUtils.getARDisplay().then(function (display)    //端末判定と表示可否の判定がされ、VRDisplayが呼び出される
-            // {
+            THREE.ARUtils.getARDisplay().then(function (display)    //端末判定と表示可否の判定がされ、VRDisplayが呼び出される
+            {
 
             //     if (display)    //ARディスプレイが取得できた場合 → ARアプリを実行可能だと判断
             //     { 
@@ -168,7 +168,7 @@ THREE.ARUtils.getARDisplay().then(function (display)
             //     {
             //         THREE.ARUtils.displayUnsupportedMessage();      //画面に警告を表示して終了
             //     }
-            // });
+            });
 
 
 
